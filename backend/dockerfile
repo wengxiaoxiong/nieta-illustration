@@ -1,0 +1,15 @@
+# 使用Node.js 16官方提供的Docker镜像作为基础镜像
+FROM node:16-alpine
+
+WORKDIR /app
+
+COPY . .
+
+RUN npm install
+
+CMD ["sh", "-c", "npx prisma db push --schema prisma/db1/schema.prisma && npx prisma generate --schema prisma/db1/schema.prisma && npm run start"]
+
+EXPOSE 3000 5555
+
+VOLUME /data
+

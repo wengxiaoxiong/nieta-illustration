@@ -1,0 +1,47 @@
+{
+  "name": "nieta-illustration-backend",
+  "version": "1.0.0",
+  "description": "wxx的小说批量跑图",
+  "main": "index.ts",
+  "scripts": {
+    "start": "cd src && nodemon --exec ts-node index.ts",
+    "prisma": "npx prisma db push --schema prisma/db1/schema.prisma ",
+    "dev": "npx prisma studio --schema prisma/db1/schema.prisma  & cd src && nodemon --exec ts-node index.ts",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "docker buildx build -t wengxiaoxiong/nieta-backend:latest --platform linux/amd64 . --push"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@prisma/client": "^4.15.0",
+    "ali-oss": "^6.17.1",
+    "archiver": "^5.3.1",
+    "axios": "^1.3.5",
+    "dotenv": "^16.0.3",
+    "dotenv-flow": "^3.2.0",
+    "exifreader": "^4.12.1",
+    "express": "^4.18.2",
+    "express-http-proxy": "^1.6.3",
+    "express-session": "^1.17.3",
+    "http-proxy": "^1.18.1",
+    "http-proxy-middleware": "^2.0.6",
+    "multer": "^1.4.5-lts.1",
+    "node-ssh": "^13.1.0",
+    "sqlite3": "^5.1.6",
+    "uuid": "^9.0.0"
+  },
+  "devDependencies": {
+    "@types/ali-oss": "^6.16.7",
+    "@types/archiver": "^5.3.2",
+    "@types/dotenv-flow": "^3.2.0",
+    "@types/express": "^4.17.17",
+    "@types/express-http-proxy": "^1.6.3",
+    "@types/express-session": "^1.17.7",
+    "@types/multer": "^1.4.7",
+    "@types/node": "^18.15.11",
+    "nodemon": "^2.0.22",
+    "prisma": "^4.15.0",
+    "ts-node": "^10.9.1",
+    "typescript": "^5.0.4"
+  }
+}

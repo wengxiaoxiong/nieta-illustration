@@ -1,0 +1,18 @@
+generator client {
+  provider = "prisma-client-js"
+  output   = "../../node_modules/@prisma-db-1/client"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = env("DATABASE_URL")
+}
+
+// 后台程序内部用户相关，和捏他用户无关！
+model User {
+  id            Int    @id @default(autoincrement())
+  name          String
+  password      String
+  role          String
+  lastLoginTime String @default("不知道")
+}

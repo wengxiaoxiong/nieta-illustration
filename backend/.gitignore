@@ -1,0 +1,7 @@
+.env
+prisma/dev.db
+prisma/devtest.db
+
+node_modules
+
+src/test/testServer.ts
